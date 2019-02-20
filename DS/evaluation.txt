@@ -1,0 +1,77 @@
+#include<iostream>
+#include<stack>
+#include<string>
+using namespace std;
+void evaluate(string s1, int len) {
+	stack<int> ev;
+	int result = 0,p=0,a,b;
+	for (int i = 0; i < len; i++) {
+	
+		if (s1[i] >= '0' && s1[i] <= '9') {
+			p = s1[i] - '0';
+			 
+			cout << "p" << p<<endl;
+			ev.push(p);
+		}
+		else
+		{
+			switch (s1[i])
+			{
+			case '+':
+
+				 a = ev.top();
+				ev.pop();
+				 b = ev.top();
+				 ev.pop();
+				result = a + b;
+				ev.push(result);
+
+				break;
+
+			case '-':
+				 a = ev.top();
+				ev.pop();
+				 b = ev.top();
+				 ev.pop();
+				result = b - a;
+				ev.push(result);
+				break;
+
+			case '*':
+				a = ev.top();
+				ev.pop();
+				b = ev.top();
+				ev.pop();
+				result = b * a;
+				ev.push(result);
+				break;
+
+			case '/':
+				 a = ev.top();
+				ev.pop();
+				 b = ev.top();
+				 ev.pop();
+				result = b / a;
+				ev.push(result);
+				break;
+			}
+		}
+
+	}
+	cout << ev.top() <<endl;
+
+}
+
+int prec(char a) {
+	if (a == '+' || a == '-') {
+		return 1;
+	}
+	if (a == '*' || a == '/') {
+		return 2;
+	}
+	if (a == '{' || a == '(' || a == '[') {
+		return 0;
+	}
+	
+		return -1;
+}

@@ -1,0 +1,4 @@
+﻿  count.c
+c:\users\duggi sahithi\source\repos\monexam.c\monexam.c\count.c(16): warning C4013: 'isalpha' undefined; assuming extern returning int
+c:\users\duggi sahithi\source\repos\monexam.c\monexam.c\count.c(19): warning C4013: 'isdigit' undefined; assuming extern returning int
+  monExam.c.vcxproj -> C:\Users\Duggi Sahithi\source\repos\monExam.c\Debug\monExam.c.exe
