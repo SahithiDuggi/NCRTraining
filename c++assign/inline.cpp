@@ -14,7 +14,7 @@ inline int divi(int x, int y) {
 }
 inline int mod(int x, int y) {
 	return (x % y);
-}
+}/*
 int main()
 {
 	int x, y;
@@ -29,4 +29,4 @@ int main()
 	getchar();
 
 	return 0;
-}
+}*/
